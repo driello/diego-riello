@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le pendu</title>
+
+    <style>
+      /* -------------------------------------------------------
+         Petit style de confort (évite l’écran “vide”/noir)
+         ------------------------------------------------------- */
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        background: #f6f7fb;
+        color: #111827;
+      }
+
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 24px;
+      }
+
+      .card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 8px 24px rgba(17, 24, 39, 0.08);
+      }
+
+      #penduImg {
+        display: block;
+        width: 220px;
+        height: 220px;
+        object-fit: contain;
+        margin: 0 auto 12px;
+      }
+
+      #motCache {
+        text-align: center;
+        font-size: 28px;
+        letter-spacing: 8px;
+        font-weight: 700;
+        margin: 12px 0;
+      }
+
+      form {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 12px;
+        flex-wrap: wrap;
+      }
+
+      input {
+        width: 56px;
+        padding: 10px;
+        font-size: 18px;
+        text-align: center;
+        border-radius: 10px;
+        border: 1px solid #d1d5db;
+      }
+
+      button {
+        padding: 10px 14px;
+        font-size: 16px;
+        border-radius: 10px;
+        border: 0;
+        cursor: pointer;
+      }
+
+      #btnTester {
+        background: #2563eb;
+        color: white;
+      }
+
+      #btnRejouer {
+        background: #111827;
+        color: white;
+        display: none; /* affiché seulement en fin de partie */
+      }
+
+      #infos,
+      #message {
+        text-align: center;
+        margin: 10px 0 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <h1>Jeu du pendu</h1>
+
+      <section id="entree" class="card">
+        <!-- Image du pendu (src géré par JS) -->
+        <img id="penduImg" alt="État du pendu" />
+
+        <!-- Mot masqué affiché en _ _ _ -->
+        <p id="motCache"></p>
+
+        <!-- Infos (erreurs + lettres ratées) -->
+        <p id="infos"></p>
+
+        <!-- Message (bravo/perdu/erreurs de saisie) -->
+        <p id="message"></p>
+
+        <!-- Formulaire (IMPORTANT : on bloque le submit en JS) -->
+        <form id="formLettre" autocomplete="off">
+          <label for="lettre">Lettre :</label>
+          <input id="lettre" name="lettre" type="text" maxlength="1" required />
+          <button id="btnTester" type="submit">Tester</button>
+          <button id="btnRejouer" type="button">Rejouer</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- Dictionnaire -->
+    <script src="./motsmots.js"></script>
+
+    <!-- Jeu -->
+    <script src="./pendu.js"></script>
+  </body>
+</html>

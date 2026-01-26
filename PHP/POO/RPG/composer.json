@@ -1,0 +1,15 @@
+{
+    "name": "riellodiego/rpg",
+    "autoload": {
+        "psr-4": {
+            "Rpg\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "driello",
+            "email": "diego.riello@wanadoo.fr"
+        }
+    ],
+    "require": {}
+}

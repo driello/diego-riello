@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RPG Combat</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <h1>Combat RPG</h1>
+
+    <div class="stats">
+      <div class="hero">
+        <h2>👨‍🎤 Héros</h2>
+        <p>PV : <span id="hero-hp">100</span></p>
+        <div class="bar hp-bar" id="hero-hp-bar"></div>
+        <p>Niveau : <span id="hero-level">1</span></p>
+      </div>
+
+      <div class="enemy">
+        <h2>👾 Ennemi</h2>
+        <p>PV : <span id="enemy-hp">100</span></p>
+        <div class="bar hp-bar" id="enemy-hp-bar"></div>
+        <p>Nom : <span id="enemy-name">Gobelin</span></p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="attack-btn">⚔️ Attaquer</button>
+      <button id="defend-btn">🛡️ Défendre</button>
+    </div>
+
+    <div class="log">
+      <h3>Journal de Combat</h3>
+      <ul id="log-list"></ul>
+    </div>
+
+    <div class="result" id="result-message"></div>
+    <button id="restart-btn" style="display:none;">🔄 Nouvelle Partie</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

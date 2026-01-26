@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talentys – Interactive CV Desk</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header>
+    <h1>Talentys</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#" id="candidate-link">Candidate</a>
+      <span class="disabled">Recruiter</span>
+    </nav>
+  </header>
+
+  <main id="desk-view">
+    <img src="assets/desk-bg.jpg" alt="Virtual Desk" class="desk-bg" />
+
+    <!-- Clickable Zones -->
+    <div class="zone" data-section="photo" style="top: 20%; left: 5%; width: 10%; height: 20%;"></div>
+    <div class="zone" data-section="info" style="top: 20%; left: 20%; width: 15%; height: 20%;"></div>
+    <div class="zone" data-section="diplomas" style="top: 50%; left: 5%; width: 15%; height: 20%;"></div>
+    <div class="zone" data-section="experiences" style="top: 50%; left: 25%; width: 20%; height: 20%;"></div>
+    <div class="zone" data-section="achievements" style="top: 50%; left: 50%; width: 20%; height: 20%;"></div>
+    <div class="zone" data-section="documents" style="top: 50%; left: 75%; width: 15%; height: 20%;"></div>
+  </main>
+
+  <!-- Popup Modal -->
+  <div id="modal-overlay" class="hidden">
+    <div class="modal">
+      <button class="close-btn">×</button>
+      <h2 id="modal-title"></h2>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
