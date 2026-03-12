@@ -2,348 +2,313 @@
 <html lang="fr">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-    content="Talentys — Maquette V1 : bureau virtuel cliquable, expériences, diplômes, réalisations et informations personnelles.">
-  <title>Bureau Virtuel vA</title>
-  <link rel="preload" as="image" href="./img/bureau2.webp">
-  <meta name="theme-color" content="#291c04" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#111827" media="(prefers-color-scheme: dark)">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV — Diego Riello</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <header>
-    <h1><strong>Diego Riello — Développeur Web Full-Stack Junior</strong></h1>
-    <p><strong>Reconversion professionnelle</strong> après 20 ans de management et de création d’entreprise dans la
-      restauration.</p>
-    <p class="intro">
-      En formation de développement web, j’ai mené deux projets personnels : un <strong>CV interactif</strong>
-      et <strong>Escape Game l’Apéro Béziers</strong>.
-      Je recherche un <strong>stage de 2 mois</strong> pour mettre en pratique et renforcer mes acquis
-      en <strong>développement web full stack</strong> —
-      <a href="./CV_DiegoRiello.pdf" download  class="cv-link">
-        télécharger mon CV (PDF)
-      </a>.
-    </p>
-    <p class="hint">
-      💡 Astuce : cliquez les zones éclairées (Infos, Diplôme, XP, Stack, Réalisations) pour explorer mon profil.
-    </p>
+  <header class="site-header">
+    <div class="header__left">
+      <img src="./img/photoid.webp" alt="Photo de profil de Diego Riello"
+        class="avatar" />
+    </div>
+    <div class="header__right">
+      <h1 class="name">Diego Riello</h1>
+      <p class="role">
+        Développeur Web &amp; Web Mobile (en formation)<br />
+        — Recherche de stage
+      </p>
+      <p class="contacts">
+        Béziers • 06.20.99.24.67. •
+        <a href="mailto:diego.riello@wanadoo.fr">diego.riello@wanadoo.fr</a><br />
+        <a href="https://www.linkedin.com/in/diego-riello-333308254/" target="_blank" rel="noopener">LinkedIn</a>
+        •
+        <a href="https://github.com/driello" target="_blank" rel="noopener">GitHub</a>
+      </p>
+    </div>
   </header>
 
-  <main class="stage">
-    <section class="scene">
-      <div class="zone ecran-top">
-      </div>
-      <div class="zone ecran-bottom"><a href="https://www.escapegame-apero-beziers.fr" target="_blank"
-          rel="noopener"><img src="./img/logo_EGA.webp" alt="Logo EGA"></a>
-      </div>
-      <div class="zone etagere1" role="button" tabindex="0" aria-controls="popDiplome">
-        <img src="./img/bacpro.webp" alt="baccalaureat professionnel hotellerie restauration">
-      </div>
-      <div class="zone etagere2" role="button" tabindex="0" aria-controls="popInfos">
-        <img src="./img/infos.webp" alt="informations personnelles">
-      </div>
-      <div class="zone etagere3" role="button" tabindex="0" aria-controls="popSkills">
-        <img src="./img/Stack.webp" alt="Stack - Compétences et skills">
-
-      </div>
-      <div class="zone tiroir-gauche" role="button" tabindex="0" aria-controls="popTiroir"
-        aria-label="Ouvrir le tiroir associatif">
-      </div>
-      <div class="zone tiroir-droit" role="button" tabindex="0" aria-controls="popTiroirD"
-        aria-label="Ouvrir la galerie de réalisations">
-      </div>
-      <div class="zone dossier" role="button" tabindex="0" aria-controls="popup">
-        <h2 id="cvxp">XP</h2>
-      </div>
+  <main class="container">
+    <!-- Profil -->
+    <section>
+      <h2 id="profil">Profil professionnel</h2>
+      <p class="lead">
+        Développeur web &amp; web mobile en reconversion après 20 ans
+        d’expérience en restauration et en management d’équipe. Je me forme
+        actuellement au titre professionnel Développeur Web &amp; Web Mobile à l’École Régionale du
+        Numérique de Béziers, et souhaite mettre mes compétences au service
+        d’une collectivité, d’une entreprise ou d’une agence web.
+      </p>
+      <p class="lead">
+        Je recherche un <strong>stage de 2 mois</strong> du
+        <strong>9 mars au 7 mai 2026</strong>, pour contribuer à des projets
+        web concrets (sites, outils internes, mise à jour de contenus) tout en
+        renforçant mes compétences en front-end
+        (HTML, CSS, JavaScript, responsive) et back-end (Node.js, API REST,
+        bases de données).
+      </p>
     </section>
-    <div class="popup" id="popup">
-      <div class="popup-content">
-        <section>
-          <h2>Expérience professionnelle</h2>
 
-          <article class="xp">
-            <header>
-              <h3>Reconversion professionnelle</h3>
-              <span class="xp__meta">Béziers • En cours</span>
-            </header>
-            <ul class="xp-list">
-              <li>Préparation du Titre professionnel <strong>Développeur Web et Web Mobile</strong> (niveau 5).</li>
-              <li>Compétences full stack : HTML, CSS, JavaScript, React, Node.js, SQL, méthode agile.</li>
-              <li>Réalisation de projets complets : <strong>CV interactif</strong> et prototypes d’applications web.
-              </li>
-            </ul>
-          </article>
+    <!-- Disponibilité stage -->
+    <section class="card card--stage">
+      <h2>Disponibilité stage</h2>
+      <ul class="bullets">
+        <li><strong>Période :</strong> 9 mars → 7 mai 2026 (2 mois)</li>
+        <li><strong>Type de structure :</strong> collectivité, organisme public, entreprise privée, startup, agence web
+          ou de communication
+        </li>
+        <li><strong>Objectifs :</strong> apprendre, contribuer à un projet
+          utile, respecter les procédures internes</li>
+      </ul>
+    </section>
 
-          <article class="xp">
-            <header>
-              <h3>Gérant Distributeur — Escape Game l'Apéro</h3>
-              <span class="xp__meta">Béziers • 2024 – Aujourd’hui</span>
-            </header>
-            <ul class="xp-list">
-              <li>Distribution d’un concept d’<strong>escape game mobile</strong> alliant jeu et produits
-                du terroir.</li>
-              <li>Conception du site web sous <strong>WordPress</strong> et pilotage de la communication digitale
-                (Canva, réseaux sociaux).</li>
-              <li>Gestion globale : stratégie, partenariats, logistique et expérience utilisateur.</li>
-            </ul>
-          </article>
+    <!-- Compétences -->
+    <section>
+      <h2 id="skills">Compétences</h2>
 
-          <article class="xp">
-            <header>
-              <h3>Adjoint Manager — LIDL</h3>
-              <span class="xp__meta">Sérignan • 2023–2025</span>
-            </header>
-            <ul class="xp-list">
-              <li>Encadrement d’une équipe de 10 à 12 collaborateurs.</li>
-              <li>Optimisation des plannings et suivi des indicateurs de performance (KPI).</li>
-              <li>Animation commerciale et amélioration continue des résultats.</li>
-            </ul>
-          </article>
-
-          <article class="xp">
-            <header>
-              <h3>Chef Caisse — LIDL</h3>
-              <span class="xp__meta">Béziers • 2019–2023</span>
-            </header>
-            <ul class="xp-list">
-              <li>Supervision de la ligne de caisse et gestion du coffre.</li>
-              <li>Formation, coordination et motivation de l’équipe.</li>
-              <li>Gestion client, résolution de conflits et mise en œuvre des procédures d’hygiène et sécurité.</li>
-            </ul>
-          </article>
-
-          <article class="xp">
-            <header>
-              <h3>Gérant Chef de cuisine — Restaurant Les Comédiens</h3>
-              <span class="xp__meta">Béziers • 2012–2019</span>
-            </header>
-            <ul class="xp-list">
-              <li>Direction d’un restaurant traditionnel et service traiteur de réception.</li>
-              <li>Comptabilité, gestion des achats et encadrement du personnel.</li>
-              <li>Organisation d’événements et relation client.</li>
-            </ul>
-          </article>
-
-          <article class="xp">
-            <header>
-              <h3>Traiteur Chef à domicile</h3>
-              <span class="xp__meta">Béziers • 2009–2012</span>
-            </header>
-            <ul class="xp-list">
-              <li>Création et gestion d’une activité de traiteur et de prestations culinaires à domicile.</li>
-              <li>Conception de menus sur mesure et accompagnement de restaurants.</li>
-              <li>Cours de cuisine et prestations associatives.</li>
-            </ul>
-          </article>
-
-          <article class="xp">
-            <header>
-              <h3>Chef de cuisine — Le Jardin</h3>
-              <span class="xp__meta">Vias-Plage • Saison 2009</span>
-            </header>
-            <ul class="xp-list">
-              <li>Création de cartes et menus pour une cuisine semi-gastronomique.</li>
-              <li>Gestion des ratios, qualité et encadrement de la brigade.</li>
-              <li>Garantie du respect des normes d’hygiène et de sécurité alimentaire.</li>
-            </ul>
-          </article>
-
-          <article class="xp">
-            <header>
-              <h3>Conseiller commercial — Davigel</h3>
-              <span class="xp__meta">Béziers • 2007–2008</span>
-            </header>
-            <ul class="xp-list">
-              <li>Développement d’un portefeuille de clients en restauration traditionnelle et collective.</li>
-              <li>Vente et conseil sur les produits frais et surgelés.</li>
-              <li>Suivi client, prospection et fidélisation.</li>
-            </ul>
-          </article>
-
-          <article class="xp">
-            <header>
-              <h3>Gérant Cuisinier — Le Beach</h3>
-              <span class="xp__meta">Vias-Plage • Saison 2007</span>
-            </header>
-            <ul class="xp-list">
-              <li>Gestion complète d’un restaurant saisonnier et coordination du personnel.</li>
-              <li>Création de cartes, gestion des achats et de la cuisine.</li>
-              <li>Organisation de soirées à thème.</li>
-            </ul>
-          </article>
-
-          <article class="xp">
-            <header>
-              <h3>Cuisinier — La Chamberte</h3>
-              <span class="xp__meta">Villeneuve-lès-Béziers • 2005–2006</span>
-            </header>
-            <ul class="xp-list">
-              <li>Préparation des plats et service dans une table d’hôte.</li>
-              <li>Rôtisserie à la cheminée et cuisine artisanale.</li>
-            </ul>
-          </article>
-        </section>
-
-
-        <button class="close-btn" id="closeBtn">Fermer</button>
-      </div>
-    </div>
-
-    <div class="popup" id="popDiplome">
-      <div class="diplome-content">
-        <img src="./img/bacpro.webp" alt="diplome" style="width: 90vh;">
-        <button class="close-btn" id="closeDiplome">Fermer</button>
-      </div>
-    </div>
-
-
-    <div class="popup" id="popTiroir">
-      <article class="popup-content">
-        <h2>Engagement associatif</h2>
-        <h3>Président — Assoc. Calandretas Besierencas</h3>
-        <p><em>2017–2018 • Écoles occitanes de Béziers</em></p>
-        <p>Organisation d’événements solidaires – Écoles occitanes de Béziers
-          Pilotage des actions de financement et de communication au profit des écoles occitanes.
-          Animation et coordination d’équipes bénévoles, gestion logistique des événements et promotion des valeurs
-          culturelles occitanes auprès des familles et du grand public.</p>
-
-
-        <ul class="xp-list">
-          <li><strong>Pilotage événements solidaires</strong> : conception des formats, logistique, sécurité, relation
-            mairie/prestataires.</li>
-          <li><strong>Coordination des bénévoles</strong> : recrutement, briefing, planning et répartition des rôles le
-            jour J.</li>
-          <li><strong>Communication</strong> : visuels, posts réseaux, relances mailings, présence terrain auprès des
-            familles.</li>
-          <li><strong>Partenariats locaux</strong> : artisans/commerçants, dotations et visibilité mutuelle.</li>
-          <li><strong>Suivi opérationnel</strong> : budget, achats, rétroplanning, débrief et amélioration continue.
+      <div class="skill-grid">
+        <ul>
+          <li>
+            <strong>Front-end (en cours d’acquisition) :</strong>
+            HTML5 • CSS3 • JavaScript (bases, DOM) • React (bases) • responsive •
           </li>
+
+          <li>
+            <strong>Back-end (en cours d’acquisition) :</strong>
+            Symfony (bases) • Node.js • Express • notions MySQL / MongoDB
+          </li>
+
+
+
+
+        </ul>
+        <ul>
+
+          <!-- Mobile : à afficher clairement car Flutter est demandé dans beaucoup de stacks -->
+          <li>
+            <strong>Mobile (en cours d’acquisition) :</strong>
+            Flutter (bases)
+          </li>
+          <li>
+            <strong>Outils web &amp; contenus :</strong>
+            Canva • bases SEO • Chatgpt
+          </li>
+          <li>
+            <strong>Outils &amp; CMS :</strong>
+            VS Code • Git / GitHub • Postman • WordPress (administration)
+          </li>
+
         </ul>
 
-        <!-- Zone images (tu ajoutes tes visuels ici) -->
-        <div class="gallery">
-          <img src="./img/besierencas1.webp" alt="Affiche événement Calandretas" loading="lazy" decoding="async">
-          <img src="./img/cal1.webp" alt="Affiche événement Calandretas" loading="lazy" decoding="async">
-          <img src="./img/cal2.webp" alt="Affiche événement Calandretas" loading="lazy" decoding="async">
-          <img src="./img/cal3.webp" alt="Affiche événement Calandretas" loading="lazy" decoding="async">
-          <img src="./img/cal4.webp" alt="Affiche événement Calandretas" loading="lazy" decoding="async">
-          <img src="./img/cal5.webp" alt="Affiche événement Calandretas" loading="lazy" decoding="async">
-          <!-- Ajoute d'autres images ici -->
-        </div>
+        <ul>
+          <li>
+            <strong>Gestion de projet :</strong>
+            Organisation • planification • suivi d’indicateurs • communication
+          </li>
+          <li>
+            <strong>Soft skills :</strong>
+            Autonomie • adaptabilité • sens du résultat • sang-froid
+          </li>
+          <li>
+            <strong>Expérience terrain</strong> (management & opérationnel)
+          </li>
+        </ul>
+      </div>
 
-        <button class="close-btn" id="closeTiroir">Fermer</button>
+    </section>
+
+    <!-- Projets web & numériques -->
+    <section class="card">
+      <h2>Projets web &amp; numériques</h2>
+
+      <article class="proj">
+        <header>
+          <h3>Escape Game l’Apéro Béziers (EGA)</h3>
+          <a href="https://escapegame-apero-beziers.fr" target="_blank" class="link">Site</a>
+        </header>
+        <ul class="bullets">
+          <li>
+            Concept d’escape game mobile alliant jeu et apéritif, valorisant
+            les produits locaux d’Occitanie.
+          </li>
+          <li>
+            Création du site vitrine avec WordPress (arborescence, contenus,
+            visuels), optimisation du référencement (SEO).
+          </li>
+        </ul>
       </article>
 
-    </div>
-    <div class="popup" id="popTiroirD">
-      <div class="popup-content">
-        <h2>Réalisations & Expériences</h2> <!-- Galerie horizontale -->
-        <div class="gallery">
-          <img src="./img/diego.webp" alt="Diego Riello en cuisine – présentation du concept Escape Game Apéro">
-          <img src="./img/diego031.webp" alt="Montage d’un plateau apéro – produits du terroir Occitanie">
-          <img src="./img/diego055.webp" alt="Préparation traiteur – verrines et charcuterie artisanale">
-          <img src="./img/diego098.webp" alt="Service traiteur événementiel – buffet apéritif">
-          <img src="./img/diego02.webp" alt="Réalisation culinaire – assiette dégustation apéro">
-          <img src="./img/mariage.webp" alt="Buffet de mariage – prestation traiteur Les Comédiens Béziers">
-          <img src="./img/mariageLesComédiens.webp" alt="Réception mariage au restaurant Les Comédiens à Béziers">
-          <img src="./img/auchan.webp" alt="Stand produits du terroir – partenariat Auchan Béziers">
-          <img src="./img/auchan2.webp" alt="Animation dégustation locale – magasin Auchan Béziers">
-          <img src="./img/SIA.webp" alt="Participation au Salon International de l’Agriculture – stand régional Occitanie">
-          <img src="./img/SIA2.webp" alt="Présentation des produits au Salon International de l’Agriculture à Paris">
-          <img src="./img/paellaYan.webp" alt="Paëlla marine nationale Grande-Motte">
-        </div>
-
-        <div class="thumb-bar"></div>
-        <button class="close-btn" id="closeTiroirD">Fermer</button>
-      </div>
-    </div>
-    <div class="popup" id="popInfos">
-      <div class="popup-content">
-        <h2>Informations personnelles</h2>
-
-        <p>
-          Fort de plus de 20 ans d’expérience en management et pilotage d’équipe, j’ai choisi de mettre mes compétences
-          au service du développement web — un domaine où la rigueur, la créativité et la logique se rencontrent.
-        </p>
-        <p>
-          Actuellement en formation de <strong>Développeur Web et Web Mobile</strong> à l’École Régionale du Numérique
-          de Béziers (niveau 5), je recherche un <strong>stage de 2 mois</strong> (du 9 mars au 7 mai 2026) pour
-          renforcer mes compétences en <strong>HTML, CSS, JavaScript, React</strong> et <strong>Node.js</strong>, et
-          contribuer activement à des projets concrets au sein d’une équipe tech.
-        </p>
-
-
-        <hr>
-        <ul class="carte-infos">
-          <li>👤 Diego Riello</li>
-          <li>📧 <a href="mailto:diego.riello@wanadoo.fr">diego.riello@wanadoo.fr</a></li>
-          <li>📞 06 20 99 24 67</li>
-          <li>📍 Béziers (34)</li>
-          <li>🚗 Permis B</li>
-          <li>💼 <a href="https://www.linkedin.com/in/diego-riello-333308254/" target="_blank"
-              rel="noopener">LinkedIn</a></li>
-          <li>💻 <a href="https://github.com/driello" target="_blank" rel="noopener">GitHub</a></li>
+      <article class="proj">
+        <header>
+          <h3>Talentys — Bureau interactif (projet personnel)</h3>
+        </header>
+        <ul class="bullets">
           <li>
-            <a class="cta-cv" href="./CV_DiegoRiello.pdf" download rel="noopener">
-              👉 Télécharger mon CV (PDF)
+            Interface de CV interactif en HTML/CSS/JavaScript (zones cliquables,
+            pop-ups, mode sombre).
+          </li>
+          <li>
+            <a href="https://driello.github.io/BEWEB/" target="_blank" rel="noopener">
+              Visitez mon CV interactif
             </a>
           </li>
         </ul>
+      </article>
 
-        <button class="close-btn" id="closeInfos">Fermer</button>
-      </div>
-    </div>
-
-
-    <div class="popup" id="popSkills">
-      <div class="popup-content">
-        <h2>Compétences techniques & transversales</h2>
-
-        <h3 class="sub">Hard skills</h3>
-        <ul class="chips tech">
-          <li>HTML5 / CSS3 • Responsive Design</li>
-          <li>JavaScript (bases)</li>
-          <li>React (bases) • Node.js (bases)</li>
-          <li>SQL / MySQL (bases)</li>
-          <li>Git / GitHub • VS Code</li>
-          <li>Bootstrap / Tailwind</li>
-          <li>WordPress • SEO</li>
-          <li>Outils & productivité : ChatGPT, Canva, Suite Office</li>
+      <article class="proj">
+        <header>
+          <h3>Fork Netflix — Interface de plateforme de streaming (TP Formation)</h3>
+        </header>
+        <ul class="bullets">
+          <li>
+            Reproduction d’une page d’accueil type Netflix en HTML/CSS : sections de
+            contenus, bandeau principal, grille de vignettes et effets au survol.
+          </li>
         </ul>
+      </article>
 
-
-
-        <h3 class="sub">Soft skills</h3>
-        <ul class="chips">
-          <li>Organisation & planification</li>
-          <li>Travail en équipe & coordination</li>
-          <li>Communication & relation client</li>
-          <li>Esprit d’analyse & résolution de problèmes</li>
-          <li>Adaptabilité & autonomie</li>
-          <li>Curiosité & apprentissage continu</li>
-          <li>Leadership positif</li>
-          <li>Gestion du stress & priorisation</li>
+      <article class="proj">
+        <header>
+          <h3>API Node.js — Gestion de produits (TP formation)</h3>
+        </header>
+        <ul class="bullets">
+          <li>
+            Mise en place d’une API REST avec Node.js, Express et MongoDB pour
+            gérer des produits (création, lecture, mise à jour, suppression).
+          </li>
         </ul>
+      </article>
+    </section>
 
+    <!-- Expériences -->
+    <section class="card">
+      <h2 id="xp">Expériences professionnelles</h2>
 
-        <button class="close-btn" id="closeSkills">Fermer</button>
+      <!-- Formation placée ici à ta demande : utile pour mettre la reconversion en évidence -->
+      <article class="xp">
+        <header>
+          <h3>Formation — Développeur Web &amp; Web Mobile (Titre pro)</h3>
+          <span class="xp__meta">École Régionale du Numérique, Béziers • En cours</span>
+        </header>
+        <p>
+          Parcours orienté projets : intégration HTML/CSS (responsive), bases JavaScript,
+          React (bases), Symfony (bases) et Flutter (bases). Stage prévu : 9 mars → 7 mai 2026.
+        </p>
+      </article>
+
+      <article class="xp">
+        <header>
+          <h3>Adjoint Manager — LIDL</h3>
+          <span class="xp__meta">Sérignan • 2023–2025</span>
+        </header>
+        <p>
+          Management d’équipe, optimisation des plannings, suivi des KPI,
+          mise en place de plans d’action, animation commerciale. Travail
+          structuré et orienté résultats, transférable à la gestion de projets
+          web.
+        </p>
+      </article>
+
+      <article class="xp">
+        <header>
+          <h3>Chef Caisse — LIDL</h3>
+          <span class="xp__meta">Béziers • 2019–2023</span>
+        </header>
+        <p>
+          Supervision de la ligne de caisse, gestion du coffre, accueil client,
+          résolution de conflits, gestion des rayons frais.
+        </p>
+      </article>
+
+      <article class="xp">
+        <header>
+          <h3>Gérant Chef de cuisine — Restaurant Les Comédiens</h3>
+          <span class="xp__meta">Béziers • 2012–2019</span>
+        </header>
+        <p>
+          Cuisine traditionnelle, traiteur de réception, organisation
+          d’événements, gestion globale d’un établissement.
+        </p>
+      </article>
+
+      <article class="xp">
+        <header>
+          <h3>Traiteur Chef à domicile</h3>
+          <span class="xp__meta">Sérignan • 2009–2012</span>
+        </header>
+      </article>
+
+      <article class="xp">
+        <header>
+          <h3>Chef de cuisine — Le Jardin</h3>
+          <span class="xp__meta">Vias-Plage • Saison 2009</span>
+        </header>
+      </article>
+
+      <article class="xp">
+        <header>
+          <h3>Conseiller commercial — Davigel</h3>
+          <span class="xp__meta">Béziers • 2007–2008</span>
+        </header>
+      </article>
+
+      <article class="xp">
+        <header>
+          <h3>Gérant Cuisinier — Le Beach</h3>
+          <span class="xp__meta">Vias-Plage • Saison 2007</span>
+        </header>
+      </article>
+
+      <article class="xp">
+        <header>
+          <h3>Cuisinier — La Chamberte</h3>
+          <span class="xp__meta">Villeneuve-lès-Béziers • 2005–2006</span>
+        </header>
+      </article>
+    </section>
+
+    <!-- Formations & Associatif -->
+    <section class="grid-2">
+      <div class="card">
+        <h2>Formations</h2>
+        <ul class="bullets">
+          <li>
+            WordPress — Création &amp; administration de site (2024)
+          </li>
+          <li>
+            Réseaux sociaux — Développement commercial (2024)
+          </li>
+          <li>
+            BTS Hôtellerie-Restauration (non-abouti) — ESICAD Montpellier
+          </li>
+          <li>
+            Bac Pro Hôtellerie-Restauration — Lycée Jean Moulin, Béziers
+          </li>
+        </ul>
       </div>
 
-    </div>
-
-
+      <div class="card">
+        <h2>Engagement associatif</h2>
+        <h3>Président — Assoc. Calandretas Besierencas</h3>
+        <p class="xp__meta">Béziers • 2017–2018</p>
+        <p>
+          Organisation d’événements solidaires au profit des écoles occitanes.
+          Pilotage des actions de financement et de communication, coordination
+          des bénévoles, gestion logistique des événements et promotion de la
+          culture occitane auprès des familles et du grand public.
+        </p>
+      </div>
+    </section>
   </main>
 
-<footer class="footer">
-  <p>© 2025 Talentys — Conception et développement : <strong>Diego Riello</strong></p>
-
-</footer>
-
-
-  <script src="script.js" defer></script>
+  <footer class="site-footer">
+    <p>
+      © Diego Riello — Béziers •
+      <a href="mailto:diego.riello@wanadoo.fr">diego.riello@wanadoo.fr</a>
+    </p>
+  </footer>
 </body>
 
 </html>
