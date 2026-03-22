@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <!-- Métadonnées du document et chargement de la feuille de styles principale -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
@@ -11,6 +12,7 @@
 </head>
 
 <body>
+    <!-- En-tête du site : nom de la plateforme et navigation vers les sections clés -->
     <header>
         <H1>BOTIGA</H1>
         <nav>
@@ -20,9 +22,12 @@
             </ul>
         </nav>
     </header>
+
+    <!-- Contenu principal de la fiche commerce -->
     <main>
         <h2>LE CAPRICE D'OR</h2>
 
+        <!-- Section de présentation : image, description et avis clients -->
         <section id="section1">
             <div class="presentation">
                 <img src=".//vitrine_11zon.webp" alt="boulangerie_le_caprice_d_or">
@@ -31,6 +36,8 @@
                     Nous privilégions des farines françaises et des ingrédients de saison, avec un soin particulier
                     porté au goût et à la qualité. À emporter ou à déguster sur le pouce, découvrez aussi nos tartes,
                     sandwiches et petites douceurs maison. Bienvenue !</p>
+
+                <!-- Bloc d'avis rédigés par les clients -->
                 <div class="commentaires">
                     <div class="avis">
                         <p>user</p>
@@ -54,6 +61,8 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Colonne d'informations pratiques : horaires, contact et carte -->
             <div class="infoCommerce">
                 <div class="horaires">
                     <table>
@@ -105,8 +114,11 @@
                 </div>
             </div>
         </section>
-<section class="sectionCommande"></section>
 
+        <!-- Repère structurel pour la zone de commande en ligne -->
+        <section class="sectionCommande"></section>
+
+        <!-- Vitrine des produits mis en avant -->
         <section id="section2">
             <h2>NOS PRODUITS PHARES</h2>
 
@@ -129,6 +141,7 @@
             </div>
         </section>
 
+        <!-- Présentation des fournisseurs associés au commerce -->
         <section id="section3">
             <h2>NOS FOURNISSEURS</h2>
 
@@ -154,6 +167,7 @@
 
     </main>
 
+    <!-- Pied de page : rappel des liens principaux -->
     <footer>
         <nav>
             <ul>
@@ -164,7 +178,8 @@
         </nav>
     </footer>
 
+    <!-- Le script est différé pour laisser le HTML se construire avant exécution -->
     <script src="./script.js" defer></script>
-    </body>
+</body>
 
 </html>

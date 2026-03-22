@@ -1,26 +1,25 @@
-/*
-BONNE PRATIQUE CLAASER LE CSS DANS L'ORDRE 
-1 BALISES DANS L'ORDRE
-2 CLASS   ""    ""  
-3 ID      ""    ""  
-*/
+/* Organisation : styles globaux, thème sombre, composants, puis responsive. */
 
+/* Fond principal du site et marge extérieure pour aérer la page */
 body {
     background: rgb(225, 146, 0);
     margin:2%;
 }
 
+/* En desktop, le header répartit le titre et la navigation sur une même ligne */
 header {
     display: flex;
     justify-content: space-around;
 
 }
 
+/* Le footer centre sa navigation dans l'axe horizontal */
 footer {
     display: flex;
     justify-content: center;
 }
 
+/* La liste de navigation est affichée en ligne et sans puces */
 nav ul {
     list-style: none;
     display: flex;
@@ -28,15 +27,18 @@ nav ul {
     margin-top: 30px;
 }
 
+/* Les liens gardent un aspect simple et lisible */
 nav a {
     text-decoration: none;
     color: black;
 }
 
+/* Les titres de sections sont posés sur un fond clair pour ressortir du fond orange */
 h2 {
     background: whitesmoke;
 }
 
+/* Style de carte partagé par les blocs produits et fournisseurs */
 article {
     display: flex;
     flex-direction: column;
@@ -46,16 +48,19 @@ article {
     padding-top: 10px;
 }
 
+/* Les images restent fluides sans descendre sous une taille minimale */
 article img {
    max-width: 90%;
     height: auto;
     min-width: 250px;
 }
 
+/* La classe .dark est ajoutée par JavaScript sur <body> pour activer le thème sombre */
 .dark {
     background: black;
 }
 
+/* Contraste renforcé pour le header et le bouton burger en mode sombre */
 .dark header,
 .dark .burger {
     color: wheat;
@@ -105,12 +110,14 @@ article img {
 .dark .fournisseurs article{
     background: rgb(50, 37, 12);
 }
-/* Desktop par défaut : burger caché */
+
+/* Par défaut, le menu burger est masqué et n'apparaît qu'en responsive */
 .burger {
     display: none;
 }
 
 
+/* Bloc de présentation du commerce : contenu centré sur fond clair */
 .presentation {
     display: flex;
     flex-direction: column;
@@ -119,29 +126,33 @@ article img {
     background: wheat;
 }
 
+/* L'image principale prend la majeure partie de la largeur disponible */
 .presentation img {
-    aspect-ratio: 16 / 9;
-    width: 80%;
+    width: 90%;
     height: auto;
     margin-top: 10px;
 }
 
+/* Espacement entre le visuel et le texte descriptif */
 .presentation p {
     margin-top: 20px;
 }
 
+/* Liste d'avis scrollable pour limiter la hauteur totale de la section */
 .commentaires {
-    max-width: 900px;                 /* limite sur grands écrans */
-  width: min(92%, 60rem);           /* fluide */
-  margin-inline: auto;              /* centré */
-  padding: 1rem;                    /* respiration */
+    max-width: 900px;                 /* Limite la largeur sur grand écran. */
+  width: min(92%, 60rem);           /* Garde un bloc fluide avec une largeur maximale. */
+  margin-inline: auto;              /* Centre horizontalement le conteneur. */
+  padding: 1rem;                    /* Ajoute de l'air autour des avis. */
   border-radius: .5rem;
-  max-height: 60vh;                 /* évite une page trop longue */
+  max-height: 60vh;                 /* Empêche les avis d'occuper toute la page. */
   -webkit-overflow-scrolling: touch;
   overflow-y: auto;
   background: whitesmoke;
 
 }
+
+/* Chaque avis utilise une grille pour répartir auteur, note et commentaire */
 .avis {
   display: grid;
   align-items: center;
@@ -149,18 +160,22 @@ article img {
   padding-block: .75rem;
   border-bottom: 1px solid rebeccapurple;
 
-  /* 2 colonnes par défaut : auteur + étoiles en haut, commentaire en dessous */
+  /* Sur petit écran, le commentaire passe sous les deux informations courtes. */
   grid-template-columns: 1fr auto;
   grid-template-areas: "user stars" "comment comment";
 }
+
+/* Si des classes dédiées sont ajoutées dans le HTML, elles occupent ces zones de la grille */
 .avis .user   { grid-area: user;    text-align: left;  }
 .avis .etoile { grid-area: stars;   text-align: left; }
 .avis .com    { grid-area: comment; text-align: left;  }
 
+/* Les retours à la ligne automatiques évitent les débordements de texte */
 .avis p { margin: 0; line-height: 1.35; }
 .avis p,
 .avis .com { overflow-wrap: anywhere; hyphens: auto; }
 
+/* Colonne d'informations pratiques affichée à côté de la présentation */
 .infoCommerce {
     display: flex;
     flex-direction: column;
@@ -168,6 +183,7 @@ article img {
     background: wheat;
 }
 
+/* Encadré des horaires, recentré et arrondi */
 .horaires {
     display: flex;
     justify-content: center;
@@ -179,10 +195,12 @@ article img {
     border-radius: 10px;
 }
 
+/* Prévoit un centrage si un titre interne est placé dans ce bloc */
 .horaires h3 {
     text-align: center;
 }
 
+/* Coordonnées de contact empilées verticalement */
 .contact {
     display: flex;
     justify-content: center;
@@ -192,6 +210,7 @@ article img {
     width: 80%;
 }
 
+/* Bloc de carte / localisation placé sous les contacts */
 .map {
     margin-bottom: 20px;
     display: flex;
@@ -202,12 +221,14 @@ article img {
 }
 
 
+/* Classe utilitaire prévue pour centrer un futur bloc de commande */
 .commander {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Les produits sont alignés sur une seule ligne en version desktop */
 .produits {
     display: flex;
     justify-content: space-around;
@@ -217,6 +238,7 @@ article img {
 
 }
 
+/* Les fournisseurs restent sur une ligne et peuvent défiler horizontalement */
 .fournisseurs {
     display: flex;
     justify-content: space-around;
@@ -224,27 +246,29 @@ article img {
     overflow-x: auto;
 }
 
+/* Chaque carte fournisseur occupe environ un tiers de la largeur du conteneur */
 .fournisseurs article {
     width: 30%;
 }
 
 
 
+/* Première section découpée en deux colonnes : contenu éditorial puis infos */
 #section1 {
     display: grid;
     grid-template-columns: 65% 35%;
 }
 
 
+/* Les paragraphes de la section 1 restent dans une largeur de lecture confortable */
 #section1 p {
     width: 80%;
 }
 
 
 
-/* --- Menu burger : logique d'affichage --- */
+/* Responsive mobile : le menu burger prend le relais de la navigation classique */
 
-/* Mobile : burger visible, nav cachée (sauf .active) */
 @media (max-width: 768px) {
     .burger {
         display: inline-block;
@@ -256,6 +280,7 @@ article img {
         /* pousse à droite dans le header flex */
     }
 
+    /* La navigation devient un panneau dépliable sous le header */
     header nav {
         display: none;
         position: absolute;
@@ -267,11 +292,13 @@ article img {
         border-radius: 10px;
     }
 
+    /* Cette classe est ajoutée par JavaScript au clic sur le burger */
     header nav.active {
         display: flex;
         padding: 10px;
     }
 
+    /* En mobile, les liens passent en colonne pour faciliter le toucher */
     header nav ul {
         display: flex;
         flex-direction: column;
@@ -280,6 +307,7 @@ article img {
 }
 
 
+/* Ajustements globaux de mise en page sur petit écran */
 @media (max-width: 768px) {
 
     header {
@@ -304,22 +332,28 @@ article img {
     display: flex;
     flex-wrap: wrap;
  }
+
+    /* La présentation occupe toute la largeur une fois la grille abandonnée */
     .presentation {
         margin: 0;
         width: 100%;
     }
 
+    /* Les cartes produits deviennent scrollables horizontalement */
     .produits {
         display: flex;
         overflow: auto;
 
     }
+
+    /* Largeur minimale prévue pour des cartes injectées dans le carrousel */
     .produits > div {
   min-width: 250px;
   margin-right: 10px;
 }
 
 
+    /* Les fournisseurs passent en pile verticale sur mobile */
     .fournisseurs {
         display: flex;
         flex-direction: column;
@@ -330,15 +364,19 @@ article img {
 .fournisseurs article{
     width: 80%;
 }
+
+    /* Taille fixe pour garder les images de fournisseurs bien visibles */
     .fournisseurs img {
         width: 350px;
     }
 
+    /* La section principale repasse en colonne unique */
     #section1 {
         display: flex;
         flex-direction: column;
     }
 
+    /* Les images internes s'adaptent à la largeur mobile */
     #section1 img {
         width: 80%;
         margin: 10px;
@@ -346,12 +384,13 @@ article img {
 
 }
 
+/* Sur écran plus large, l'avis repasse sur une seule ligne à trois zones */
 @media (min-width: 640px) {
   .avis {
     grid-template-columns:
-      clamp(72px, 18%, 140px)   /* auteur (mini/maxi) */
-      clamp(64px, 16%, 120px)   /* étoiles */
-      1fr;                      /* commentaire */
+      clamp(72px, 18%, 140px)   /* Largeur flexible réservée à l'auteur. */
+      clamp(64px, 16%, 120px)   /* Largeur flexible réservée aux étoiles. */
+      1fr;                      /* Le commentaire récupère l'espace restant. */
     grid-template-areas: "user stars comment";
   }
 }
