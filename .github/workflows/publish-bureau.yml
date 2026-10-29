@@ -15,12 +15,14 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Récupérer les fichiers
-        uses: actions/checkout@v6
-        with:
-          submodules: false
-          persist-credentials: false
+      - name: Récupérer les fichiers sans Git
+        run: |
+          curl --fail --location --retry 3 \
+            "https://github.com/${GITHUB_REPOSITORY}/archive/${GITHUB_SHA}.tar.gz" \
+            --output "$RUNNER_TEMP/source.tar.gz"
+          tar -xzf "$RUNNER_TEMP/source.tar.gz" --strip-components=1
 
       - name: Préparer le bureau
         run: |
@@ -40,12 +42,15 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+
     permissions:
       pages: write
       id-token: write
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - name: Publier le bureau
         id: deployment
