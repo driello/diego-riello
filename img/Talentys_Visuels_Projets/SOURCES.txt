@@ -1,0 +1,18 @@
+Visuels pour la fenêtre Projets Numériques de Talentys
+
+Copier le dossier img/projets dans le dossier du projet ouvert dans VS Code.
+Les images ont été téléchargées sans modification depuis les sites concernés.
+
+img/projets/escape-game-apero.jpg
+Site : https://escapegame-apero-beziers.fr/
+Image : https://escapegame-apero-beziers.fr/wp-content/uploads/2024/05/DSC05060-1024x683.jpg
+
+img/projets/ail-noir.webp
+Site : https://ailnoirfrancais.com/
+Image : https://ailnoirfrancais.com/assets/img/produit.webp
+
+img/projets/waterphoto.png
+Site : https://waterphoto.eu/
+Image : https://waterphoto.eu/wp-content/uploads/2026/01/c24b8b3c-8447-4a2c-9eab-f0cf34cfe092.png
+
+Directions proposées : EGA chaleureux et convivial ; Ail Noir Français noir/ivoire/doré ; WaterPhoto bleu nuit/cyan.

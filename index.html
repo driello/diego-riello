@@ -2,313 +2,445 @@
 <html lang="fr">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CV — Diego Riello</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="CV interactif de Diego Riello : management, organisation, coordination et projets numériques. Titre professionnel DWWM obtenu en juin 2026.">
+  <title>Talentys — Bureau interactif</title>
+  <script>
+    // Lire la préférence une seule fois, avant le chargement du décor et des styles.
+    let initialLightMode = false;
+    try {
+      initialLightMode = localStorage.getItem('office-theme') === 'light';
+    } catch (error) {
+      // Sans stockage disponible, le bureau démarre en thème nuit.
+    }
+    document.documentElement.classList.toggle('light-office', initialLightMode);
+    // Le meuble mobile ne charge pas les grands décors du bureau.
+    if (window.matchMedia('(min-width: 768px)').matches) {
+      const officePreload = document.createElement('link');
+      officePreload.rel = 'preload';
+      officePreload.as = 'image';
+      officePreload.dataset.officePreload = '';
+      officePreload.href = initialLightMode ? './img/Bureau/bureau2.webp' : './img/Bureau/bureau4.webp';
+      document.head.append(officePreload);
+    }
+  </script>
+  <meta name="theme-color" content="#171107">
+  <link rel="stylesheet" href="style.css?v=plein-ecran-20261017">
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="header__left">
-      <img src="./img/photoid.webp" alt="Photo de profil de Diego Riello"
-        class="avatar" />
-    </div>
-    <div class="header__right">
-      <h1 class="name">Diego Riello</h1>
-      <p class="role">
-        Développeur Web &amp; Web Mobile (en formation)<br />
-        — Recherche de stage
-      </p>
-      <p class="contacts">
-        Béziers • 06.20.99.24.67. •
-        <a href="mailto:diego.riello@wanadoo.fr">diego.riello@wanadoo.fr</a><br />
-        <a href="https://www.linkedin.com/in/diego-riello-333308254/" target="_blank" rel="noopener">LinkedIn</a>
-        •
-        <a href="https://github.com/driello" target="_blank" rel="noopener">GitHub</a>
-      </p>
-    </div>
-  </header>
+  <main>
+    <section class="office" id="bureau" aria-labelledby="office-title">
+      <h1 id="office-title" class="sr-only">Bureau interactif</h1>
 
-  <main class="container">
-    <!-- Profil -->
-    <section>
-      <h2 id="profil">Profil professionnel</h2>
-      <p class="lead">
-        Développeur web &amp; web mobile en reconversion après 20 ans
-        d’expérience en restauration et en management d’équipe. Je me forme
-        actuellement au titre professionnel Développeur Web &amp; Web Mobile à l’École Régionale du
-        Numérique de Béziers, et souhaite mettre mes compétences au service
-        d’une collectivité, d’une entreprise ou d’une agence web.
-      </p>
-      <p class="lead">
-        Je recherche un <strong>stage de 2 mois</strong> du
-        <strong>9 mars au 7 mai 2026</strong>, pour contribuer à des projets
-        web concrets (sites, outils internes, mise à jour de contenus) tout en
-        renforçant mes compétences en front-end
-        (HTML, CSS, JavaScript, responsive) et back-end (Node.js, API REST,
-        bases de données).
-      </p>
-    </section>
+      <button class="theme-toggle" type="button" aria-label="Activer le thème clair" aria-pressed="false">
+        <span aria-hidden="true">☀</span>
+      </button>
 
-    <!-- Disponibilité stage -->
-    <section class="card card--stage">
-      <h2>Disponibilité stage</h2>
-      <ul class="bullets">
-        <li><strong>Période :</strong> 9 mars → 7 mai 2026 (2 mois)</li>
-        <li><strong>Type de structure :</strong> collectivité, organisme public, entreprise privée, startup, agence web
-          ou de communication
-        </li>
-        <li><strong>Objectifs :</strong> apprendre, contribuer à un projet
-          utile, respecter les procédures internes</li>
-      </ul>
-    </section>
+      <div class="scene" aria-label="Bureau virtuel. Sélectionnez un objet pour découvrir le profil de Diego Riello.">
+      
 
-    <!-- Compétences -->
-    <section>
-      <h2 id="skills">Compétences</h2>
+        <img class="desk-media desk-media--portrait" src="./img/Bureau/photoid.webp" alt="" aria-hidden="true">
+        <img class="desk-media desk-media--diploma" src="./img/diplomes/bacpro.webp" alt="" aria-hidden="true">
+        <img class="desk-media desk-media--contact" src="./img/Bureau/infos.webp" alt="" aria-hidden="true">
+        <img class="desk-media desk-media--digital" src="./img/Bureau/Stack.webp" alt="" aria-hidden="true">
 
-      <div class="skill-grid">
-        <ul>
-          <li>
-            <strong>Front-end (en cours d’acquisition) :</strong>
-            HTML5 • CSS3 • JavaScript (bases, DOM) • React (bases) • responsive •
-          </li>
-
-          <li>
-            <strong>Back-end (en cours d’acquisition) :</strong>
-            Symfony (bases) • Node.js • Express • notions MySQL / MongoDB
-          </li>
-
-
-
-
-        </ul>
-        <ul>
-
-          <!-- Mobile : à afficher clairement car Flutter est demandé dans beaucoup de stacks -->
-          <li>
-            <strong>Mobile (en cours d’acquisition) :</strong>
-            Flutter (bases)
-          </li>
-          <li>
-            <strong>Outils web &amp; contenus :</strong>
-            Canva • bases SEO • Chatgpt
-          </li>
-          <li>
-            <strong>Outils &amp; CMS :</strong>
-            VS Code • Git / GitHub • Postman • WordPress (administration)
-          </li>
-
-        </ul>
-
-        <ul>
-          <li>
-            <strong>Gestion de projet :</strong>
-            Organisation • planification • suivi d’indicateurs • communication
-          </li>
-          <li>
-            <strong>Soft skills :</strong>
-            Autonomie • adaptabilité • sens du résultat • sang-froid
-          </li>
-          <li>
-            <strong>Expérience terrain</strong> (management & opérationnel)
-          </li>
-        </ul>
+        <button class="hotspot hotspot--profile" type="button" data-panel="profile" aria-haspopup="dialog" aria-label="Diego Riello">
+          <span class="hotspot__label">Mon profil</span>
+        </button>
+        <button class="hotspot hotspot--experience" type="button" data-panel="digital" aria-haspopup="dialog" aria-label="Projets numériques">
+          <img class="hotspot__project-logo" src="./img/projets/logo_EGA.webp" alt="" aria-hidden="true">
+          <span class="hotspot__label">Projets Numériques</span>
+        </button>
+        <button class="hotspot hotspot--diploma" type="button" data-panel="diploma" aria-haspopup="dialog" aria-label="Diplômes &amp; formations">
+          <span class="hotspot__label">Diplômes</span>
+        </button>
+        <button class="hotspot hotspot--contact" type="button" data-panel="contact" aria-haspopup="dialog" aria-label="Compétences">
+          <span class="hotspot__label">Compétences</span>
+        </button>
+        <button class="hotspot hotspot--digital" type="button" data-panel="experience" aria-haspopup="dialog" aria-label="Parcours professionnel">
+          <span class="hotspot__label">Mon parcours</span>
+        </button>
+        <button class="hotspot hotspot--cuisine" type="button" data-panel="cuisine" aria-haspopup="dialog" aria-label="Cuisine &amp; événementiel">
+          <span class="hotspot__label">Cuisine<br>&amp; événementiel</span>
+        </button>
+        <button class="hotspot hotspot--operations" type="button" data-panel="operations" aria-haspopup="dialog" aria-label="Management &amp; organisation">
+          <span class="hotspot__label">Management<br>&amp; organisation</span>
+        </button>
+        <button class="hotspot hotspot--realisations" type="button" data-panel="realisations" aria-haspopup="dialog" aria-label="Au-delà du parcours">
+          <span class="hotspot__label">Au-delà du parcours</span>
+        </button>
       </div>
-
     </section>
 
-    <!-- Projets web & numériques -->
-    <section class="card">
-      <h2>Projets web &amp; numériques</h2>
-
-      <article class="proj">
-        <header>
-          <h3>Escape Game l’Apéro Béziers (EGA)</h3>
-          <a href="https://escapegame-apero-beziers.fr" target="_blank" class="link">Site</a>
-        </header>
-        <ul class="bullets">
-          <li>
-            Concept d’escape game mobile alliant jeu et apéritif, valorisant
-            les produits locaux d’Occitanie.
-          </li>
-          <li>
-            Création du site vitrine avec WordPress (arborescence, contenus,
-            visuels), optimisation du référencement (SEO).
-          </li>
-        </ul>
-      </article>
-
-      <article class="proj">
-        <header>
-          <h3>Talentys — Bureau interactif (projet personnel)</h3>
-        </header>
-        <ul class="bullets">
-          <li>
-            Interface de CV interactif en HTML/CSS/JavaScript (zones cliquables,
-            pop-ups, mode sombre).
-          </li>
-          <li>
-            <a href="https://driello.github.io/BEWEB/" target="_blank" rel="noopener">
-              Visitez mon CV interactif
-            </a>
-          </li>
-        </ul>
-      </article>
-
-      <article class="proj">
-        <header>
-          <h3>Fork Netflix — Interface de plateforme de streaming (TP Formation)</h3>
-        </header>
-        <ul class="bullets">
-          <li>
-            Reproduction d’une page d’accueil type Netflix en HTML/CSS : sections de
-            contenus, bandeau principal, grille de vignettes et effets au survol.
-          </li>
-        </ul>
-      </article>
-
-      <article class="proj">
-        <header>
-          <h3>API Node.js — Gestion de produits (TP formation)</h3>
-        </header>
-        <ul class="bullets">
-          <li>
-            Mise en place d’une API REST avec Node.js, Express et MongoDB pour
-            gérer des produits (création, lecture, mise à jour, suppression).
-          </li>
-        </ul>
-      </article>
-    </section>
-
-    <!-- Expériences -->
-    <section class="card">
-      <h2 id="xp">Expériences professionnelles</h2>
-
-      <!-- Formation placée ici à ta demande : utile pour mettre la reconversion en évidence -->
-      <article class="xp">
-        <header>
-          <h3>Formation — Développeur Web &amp; Web Mobile (Titre pro)</h3>
-          <span class="xp__meta">École Régionale du Numérique, Béziers • En cours</span>
-        </header>
-        <p>
-          Parcours orienté projets : intégration HTML/CSS (responsive), bases JavaScript,
-          React (bases), Symfony (bases) et Flutter (bases). Stage prévu : 9 mars → 7 mai 2026.
-        </p>
-      </article>
-
-      <article class="xp">
-        <header>
-          <h3>Adjoint Manager — LIDL</h3>
-          <span class="xp__meta">Sérignan • 2023–2025</span>
-        </header>
-        <p>
-          Management d’équipe, optimisation des plannings, suivi des KPI,
-          mise en place de plans d’action, animation commerciale. Travail
-          structuré et orienté résultats, transférable à la gestion de projets
-          web.
-        </p>
-      </article>
-
-      <article class="xp">
-        <header>
-          <h3>Chef Caisse — LIDL</h3>
-          <span class="xp__meta">Béziers • 2019–2023</span>
-        </header>
-        <p>
-          Supervision de la ligne de caisse, gestion du coffre, accueil client,
-          résolution de conflits, gestion des rayons frais.
-        </p>
-      </article>
-
-      <article class="xp">
-        <header>
-          <h3>Gérant Chef de cuisine — Restaurant Les Comédiens</h3>
-          <span class="xp__meta">Béziers • 2012–2019</span>
-        </header>
-        <p>
-          Cuisine traditionnelle, traiteur de réception, organisation
-          d’événements, gestion globale d’un établissement.
-        </p>
-      </article>
-
-      <article class="xp">
-        <header>
-          <h3>Traiteur Chef à domicile</h3>
-          <span class="xp__meta">Sérignan • 2009–2012</span>
-        </header>
-      </article>
-
-      <article class="xp">
-        <header>
-          <h3>Chef de cuisine — Le Jardin</h3>
-          <span class="xp__meta">Vias-Plage • Saison 2009</span>
-        </header>
-      </article>
-
-      <article class="xp">
-        <header>
-          <h3>Conseiller commercial — Davigel</h3>
-          <span class="xp__meta">Béziers • 2007–2008</span>
-        </header>
-      </article>
-
-      <article class="xp">
-        <header>
-          <h3>Gérant Cuisinier — Le Beach</h3>
-          <span class="xp__meta">Vias-Plage • Saison 2007</span>
-        </header>
-      </article>
-
-      <article class="xp">
-        <header>
-          <h3>Cuisinier — La Chamberte</h3>
-          <span class="xp__meta">Villeneuve-lès-Béziers • 2005–2006</span>
-        </header>
-      </article>
-    </section>
-
-    <!-- Formations & Associatif -->
-    <section class="grid-2">
-      <div class="card">
-        <h2>Formations</h2>
-        <ul class="bullets">
-          <li>
-            WordPress — Création &amp; administration de site (2024)
-          </li>
-          <li>
-            Réseaux sociaux — Développement commercial (2024)
-          </li>
-          <li>
-            BTS Hôtellerie-Restauration (non-abouti) — ESICAD Montpellier
-          </li>
-          <li>
-            Bac Pro Hôtellerie-Restauration — Lycée Jean Moulin, Béziers
-          </li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>Engagement associatif</h2>
-        <h3>Président — Assoc. Calandretas Besierencas</h3>
-        <p class="xp__meta">Béziers • 2017–2018</p>
-        <p>
-          Organisation d’événements solidaires au profit des écoles occitanes.
-          Pilotage des actions de financement et de communication, coordination
-          des bénévoles, gestion logistique des événements et promotion de la
-          culture occitane auprès des familles et du grand public.
-        </p>
+    <section class="mobile-office" aria-label="Talentys — bureau mobile">
+      <div class="mobile-cabinet">
+        <div class="mobile-portrait"></div>
+        <section class="mobile-profile__info" aria-label="Profil de Diego Riello">
+          <h1 class="mobile-profile__name"></h1>
+          <p class="mobile-profile__city"></p>
+          <div class="mobile-status-slot"></div>
+        </section>
+        <div class="mobile-theme-slot"></div>
+        <button class="mobile-action mobile-profile-open" type="button" aria-haspopup="dialog">Mon profil</button>
+        <button class="mobile-action mobile-contact-toggle" type="button" aria-haspopup="dialog">Me contacter</button>
+        <nav class="mobile-drawers" aria-label="Explorer les sept sections"></nav>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>
-      © Diego Riello — Béziers •
-      <a href="mailto:diego.riello@wanadoo.fr">diego.riello@wanadoo.fr</a>
-    </p>
-  </footer>
+  <dialog class="cv-dialog" id="cvDialog" aria-labelledby="dialogTitle">
+    <div class="dialog-shell">
+      <header class="dialog-header">
+        <div>
+          <p class="dialog-kicker" id="dialogKicker"></p>
+          <h2 id="dialogTitle"></h2>
+        </div>
+        <button class="dialog-close" type="button" aria-label="Fermer la fenêtre">×</button>
+      </header>
+      <div class="dialog-content" id="dialogContent"></div>
+    </div>
+  </dialog>
+
+  <dialog class="image-viewer" id="imageViewer" aria-labelledby="imageCaption">
+    <button class="image-viewer__close" type="button" aria-label="Fermer l’image">×</button>
+    <img id="viewerImage" alt="">
+    <p id="imageCaption"></p>
+  </dialog>
+
+  <template id="panel-profile" data-title="Diego Riello" data-kicker="Profil professionnel" data-status="À la recherche d’une opportunité" data-status-short="En recherche">
+    <div class="profile-layout">
+      <div class="profile-sidebar">
+        <img class="profile-photo" src="./img/Bureau/photoid.webp" alt="Portrait de Diego Riello">
+        <a class="profile-cv" href="./img/CV_telechargeable/CV_Diego_Riello.pdf" download>Télécharger mon CV</a>
+        <section class="profile-contact" aria-labelledby="profile-contact-title">
+          <address>
+            <a href="mailto:diego.riello@wanadoo.fr">diego.riello@wanadoo.fr</a>
+            <a href="tel:+33620992467">06 20 99 24 67</a>
+            <span>Béziers · Permis B</span>
+          </address>
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/diego-riello-333308254/" target="_blank" rel="noopener" aria-label="LinkedIn — nouvel onglet" title="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96C2 21.32 2.69 22 3.55 22h16.9c.86 0 1.55-.68 1.55-1.52V3.52C22 2.68 21.31 2 20.45 2ZM7.93 18.75H4.98V9.2h2.95v9.55ZM6.45 7.9a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42Zm12.3 10.85H15.8V14.1c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.73H9.51V9.2h2.83v1.3h.04c.39-.74 1.36-1.53 2.79-1.53 2.98 0 3.58 1.96 3.58 4.51v5.27Z"/></svg>
+            </a>
+            <a href="https://github.com/driello" target="_blank" rel="noopener" aria-label="GitHub — nouvel onglet" title="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.23c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.75.08-.73.08-.73 1.21.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
+            </a>
+          </div>
+        </section>
+      </div>
+      <div class="profile-body">
+        <p class="lead">Une expérience de terrain en restauration, en management et en gestion d’activité, enrichie par le développement web.</p>
+        <p>Mon parcours s’est construit au contact des clients et des équipes. Cuisinier de métier, j’ai développé une activité de traiteur et de chef à domicile, puis dirigé pendant sept ans le restaurant Les Comédiens à Béziers.</p>
+        <p>J’ai ensuite rejoint Lidl, où j’ai exercé comme chef caisse, puis adjoint manager. Accompagner les équipes, répartir le travail et suivre les priorités opérationnelles ont renforcé mon goût pour un management concret, fondé sur la présence et l’échange.</p>
+        <p>Titulaire du titre professionnel de Développeur Web et Web Mobile obtenu en juin 2026, j’ajoute aujourd’hui une dimension numérique à ce parcours. Je conçois des sites et des outils en m’appuyant sur ma connaissance du terrain, avec une attention particulière portée à leur utilité et à leur simplicité d’utilisation.</p>
+        <p class="profile-invitation">Ce bureau vous invite à découvrir mon parcours autrement. Cliquez sur les objets pour explorer mes compétences, consulter mon CV et mes diplômes, ou découvrir mes réalisations en cuisine, en management et dans le numérique. Chaque section apporte un éclairage concret sur mon expérience : à vous de choisir votre chemin.</p>
+      </div>
+    </div>
+  </template>
+
+  <template id="panel-mobile-contact" data-title="Me contacter" data-kicker="Coordonnées">
+    <section class="profile-contact" aria-label="Coordonnées">
+      <address></address>
+      <div class="contact-links"></div>
+    </section>
+  </template>
+
+  <template id="panel-cuisine" data-title="Cuisine &amp; événementiel" data-kicker="Expérience de terrain" data-dialog-class="cuisine-dialog">
+    <p class="lead">Une expérience complète de la cuisine, de la production jusqu’au
+      service.</p>
+    <div class="content-grid cuisine-cards">
+      <article class="info-card">
+        <h3>Production &amp; service</h3>
+        <ul>
+          <li>Chef de cuisine et responsable de production</li>
+          <li>Organisation des services</li>
+          <li>Productions en gros volumes</li>
+          <li>Hygiène, sécurité et HACCP</li>
+        </ul>
+      </article>
+      <article class="info-card">
+        <h3>Maîtrise &amp; rentabilité</h3>
+        <ul>
+          <li>Création et renouvellement de cartes</li>
+          <li>Fiches techniques et coûts matière</li>
+          <li>Achats, stocks et réduction des pertes</li>
+          <li>Relations fournisseurs</li>
+          <li>Inventaires et bilans</li>
+        </ul>
+      </article>
+      <article class="info-card">
+        <h3>Traiteur &amp; événementiel</h3>
+        <ul>
+          <li>Prestations traiteur et chef à domicile</li>
+          <li>Mariages, buffets et cocktails</li>
+          <li>Repas d'entreprise</li>
+          <li>Événement organisé pour 800 participants</li>
+          <li>Conception de menus sur mesure</li>
+        </ul>
+      </article>
+    </div>
+    <section class="cuisine-gallery" aria-labelledby="cuisine-gallery-title">
+      <h3 id="cuisine-gallery-title">Quelques réalisations</h3>
+      <div class="cuisine-gallery__grid"></div>
+    </section>
+  </template>
+
+  <template id="panel-operations" data-title="Management &amp; organisation" data-kicker="Gestion d’activité et coordination" data-dialog-class="operations-dialog">
+    <p class="lead">Gestion d’établissement, organisation opérationnelle et animation d’équipes au service de la
+      performance et de l’expérience client.</p>
+    <div class="content-grid operations-cards">
+      <article class="info-card" aria-labelledby="operations-business-title">
+        <header>
+          <h3 id="operations-business-title">Gestion d’entreprise</h3>
+          <p class="operations-cards__structure">Les Comédiens</p>
+          <p class="operations-cards__role">Gérant &amp; chef de cuisine · 2012–2019</p>
+        </header>
+        <div class="operations-cards__responsibilities">
+          <p>Direction du restaurant et de l’activité traiteur pendant <strong>sept ans</strong>. Management de <strong>cinq personnes</strong> : recrutement, formation, plannings et coordination des services. Gestion des achats, des fournisseurs et des prestations.</p>
+        </div>
+        <section class="operations-cards__highlight" aria-labelledby="operations-business-highlight">
+          <h4 id="operations-business-highlight">Faits marquants</h4>
+          <ul>
+            <li>Pilotage d’une prestation Lidl pour <strong>environ 800 participants</strong> avec une équipe renforcée d’une <strong>dizaine de personnes</strong>.</li>
+            <li>Coordination avec la direction régionale : produits de l’enseigne, logistique, mobilier et installation.</li>
+            <li><strong>Quatre ans</strong> de collaboration et plusieurs dizaines de prestations.</li>
+          </ul>
+        </section>
+        <figure class="operations-cards__visual operations-cards__visual--business">
+          <button class="media-card operations-cards__photo" type="button" aria-label="Agrandir : Buffet cocktail — prestation pour Lidl">
+            <img src="./img/Lidl/comedien-buffet-lidl.webp" alt="Buffets et tables de cocktail installés dans un entrepôt Lidl pour une prestation traiteur des Comédiens." loading="lazy">
+          </button>
+          <figcaption>Buffet cocktail pour 200 personnes — prestation pour Lidl</figcaption>
+        </figure>
+      </article>
+      <article class="info-card" aria-labelledby="operations-lidl-title">
+        <header>
+          <h3 id="operations-lidl-title">Management</h3>
+          <p class="operations-cards__structure">Lidl</p>
+          <p class="operations-cards__role">Chef caisse / Adjoint manager · 2019–2025</p>
+        </header>
+        <div class="operations-cards__responsibilities">
+          <p>Coordination d’équipes de <strong>cinq à dix personnes</strong> : organisation quotidienne, répartition des tâches, formation et gestion des priorités. Suivi des stocks, des indicateurs de performance et des standards de l’enseigne.</p>
+        </div>
+        <section class="operations-cards__highlight" aria-labelledby="operations-lidl-highlight">
+          <h4 id="operations-lidl-highlight">Faits marquants</h4>
+          <ul>
+            <li>Interventions dans <strong>cinq magasins</strong>, avec adaptation aux équipes et aux organisations.</li>
+            <li><strong>Ambassadeur Lidl au Salon de l’agriculture :</strong> échanges avec les visiteurs, distribution de goodies et invitation à découvrir le stand et ses animations.</li>
+          </ul>
+        </section>
+        <figure class="operations-cards__visual operations-cards__visual--lidl">
+          <button class="media-card operations-cards__photo" type="button" aria-label="Agrandir : Ambassadeur Lidl — Salon de l’agriculture">
+            <img src="./img/Lidl/SIA.webp" alt="Diego Riello sur le stand Lidl au Salon de l’agriculture" loading="lazy">
+          </button>
+          <figcaption>Ambassadeur Lidl — Salon de l’agriculture</figcaption>
+        </figure>
+      </article>
+      <article class="info-card" aria-labelledby="operations-association-title">
+        <header>
+          <h3 id="operations-association-title">Engagement associatif</h3>
+          <p class="operations-cards__structure">Calandretas Besierencas</p>
+          <p class="operations-cards__role">Coprésident · 2017–2018</p>
+        </header>
+        <div class="operations-cards__responsibilities">
+          <p>Prise de décisions. Relations publiques, recherche de partenaires et organisation d’événements. Coordination d’équipes entièrement bénévoles, principalement composées de parents d’élèves.</p>
+        </div>
+        <section class="operations-cards__highlight" aria-labelledby="operations-association-highlight">
+          <h4 id="operations-association-highlight">Faits marquants</h4>
+          <ul>
+            <li><strong>Deux éditions de la Feria de Béziers :</strong> organisation de la bodega, achats, restauration et service sur <strong>cinq jours</strong>.</li>
+            <li><strong>Carnaval :</strong> liaison entre les écoles Calandretas et Lou Camel, association organisatrice, et participation aux préparatifs et aux festivités.</li>
+          </ul>
+        </section>
+        <figure class="operations-cards__visual operations-cards__visual--association">
+          <button class="media-card operations-cards__photo" type="button" aria-label="Agrandir : Bodega associative — Feria de Béziers">
+            <img src="./img/besierencas/cal2.webp" alt="Équipe bénévole en cuisine dans la bodega associative, avec le public à l’arrière-plan." loading="lazy">
+          </button>
+          <figcaption>Bodega associative — Feria de Béziers</figcaption>
+        </figure>
+      </article>
+    </div>
+  </template>
+
+  <template id="panel-experience" data-title="Parcours professionnel" data-kicker="Plus de 20 ans d’expérience">
+    <div class="timeline">
+      <article><time>2024 — aujourd’hui</time><h3>Gérant distributeur · Escape Game l’Apéro</h3><p>Stratégie, partenariats, logistique, expérience utilisateur et communication digitale.</p></article>
+      <article><time>2025 — juin 2026</time><h3>Titre professionnel · Développeur Web et Web Mobile</h3><p>Titre obtenu en juin 2026 à Béziers. Formation orientée vers la conception et le développement de sites et d’applications web.</p></article>
+      <article><time>2023 — 2025</time><h3>Adjoint Manager · Lidl, Sérignan</h3><p>Encadrement d’équipe, organisation, plannings et suivi des KPI.</p></article>
+      <article><time>2019 — 2023</time><h3>Chef Caisse · Lidl, Béziers</h3><p>Supervision, formation, coordination d’équipe et relation client.</p></article>
+      <article><time>2012 — 2019</time><h3>Gérant Chef de cuisine · Restaurant Les Comédiens</h3><p>Direction du restaurant et du service traiteur, achats, personnel et événements.</p></article>
+      <article><time>2009 — 2012</time><h3>Traiteur · Chef à domicile</h3><p>Menus sur mesure, prestations culinaires, conseil et cours de cuisine.</p></article>
+      <article><time>2009</time><h3>Chef de cuisine · Le Jardin</h3><p>Création de cartes, ratios, qualité, brigade et sécurité alimentaire.</p></article>
+      <article><time>2007 — 2008</time><h3>Conseiller commercial · Davigel</h3><p>Développement et suivi d’un portefeuille de professionnels de la restauration.</p></article>
+      <article><time>2007</time><h3>Gérant Cuisinier · Le Beach</h3><p>Gestion du restaurant saisonnier, cuisine, achats et soirées à thème.</p></article>
+      <article><time>2005 — 2006</time><h3>Cuisinier · La Chamberte</h3><p>Table d’hôte, cuisine artisanale et rôtisserie à la cheminée.</p></article>
+    </div>
+  </template>
+
+  <template id="panel-realisations" data-title="Au-delà du parcours" data-kicker="Loisirs et découvertes" data-dialog-class="leisure-dialog">
+    <p class="lead">La curiosité et le plaisir de créer m’accompagnent aussi au quotidien. En cuisine, derrière les platines, en voyage ou à travers mes projets de bricolage, j’aime explorer, expérimenter et apprendre.</p>
+    <div class="leisure-grid">
+      <article class="leisure-card" data-leisure-gallery="cuisine" aria-labelledby="leisure-title-1">
+        <svg class="leisure-card__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 27a8 8 0 0 1-2-16 12 12 0 0 1 24 0 8 8 0 0 1-2 16v12H14Z"/><path d="M14 33h20M20 22v5m8-5v5"/></svg>
+        <h3 id="leisure-title-1">Cuisine &amp; pâtisserie</h3>
+        <p>J’aime improviser avec les ingrédients du moment, explorer les cuisines du monde, particulièrement asiatiques, et prendre le temps de pâtisser. Au fil des saisons, je me lance aussi de nouveaux défis culinaires.</p>
+      </article>
+      <article class="leisure-card" data-leisure-gallery="dj" aria-labelledby="leisure-title-2">
+        <span class="leisure-card__icon" aria-hidden="true">♫</span>
+        <h3 id="leisure-title-2">Musique &amp; DJing</h3>
+        <p>Passionné de musique electronique et de djing. Entre 2004 et 2006, j’ai mixé à quelques reprises en boite de nuit, puis lors de quelques événements. Aujourd’hui, je mixe chez moi et entre amis, pour partager la musique et créer une ambiance.</p>
+      </article>
+      <article class="leisure-card" data-leisure-gallery="voyages" aria-labelledby="leisure-title-3">
+        <span class="leisure-card__icon" aria-hidden="true">✈</span>
+        <h3 id="leisure-title-3">Voyages &amp; gastronomie</h3>
+        <p>J’aime voyager et découvrir d’autres cultures, avec un attachement particulier à Ibiza et aux Baléares. Du Canada à la Martinique, de la Norvège à Marrakech, ces découvertes s’accompagnent aussi de souvenirs gastronomiques. Les tables de Gilles Goujon, Nobu ou des frères Bonano font partie des expériences qui m’ont marqué.</p>
+      </article>
+      <article class="leisure-card" data-leisure-gallery="bricolage" aria-labelledby="leisure-title-4">
+        <span class="leisure-card__icon" aria-hidden="true">⚒</span>
+        <h3 id="leisure-title-4">Bricolage &amp; rénovation</h3>
+        <p>J’aime rénover et réparer, comprendre comment les choses fonctionnent et trouver des solutions concrètes. Après les travaux réalisés dans mon restaurant Les Comédiens, j’ai entièrement refait ma cuisine en 2025 et, plus récemment, réparé mon sèche-linge. Le plaisir de faire soi-même et d’apprendre accompagne chacun de ces projets.</p>
+      </article>
+    </div>
+  </template>
+
+  <template id="panel-diploma" data-title="Diplômes &amp; formations" data-kicker="Parcours et qualifications">
+    <section class="diploma-gallery" aria-label="Diplômes et certifications, du plus récent au plus ancien">
+      <div class="diploma-gallery__track" id="diploma-track" tabindex="0" role="region" aria-label="Galerie défilante des diplômes">
+        <article class="diploma-gallery__card">
+          <time datetime="2026-06">Juin 2026</time>
+          <h3>Développeur Web et Web Mobile</h3>
+          <p>Conception d’interfaces, développement web et réalisation de projets concrets.</p>
+          <button class="media-card diploma-gallery__preview" type="button" aria-label="Agrandir : Développeur Web et Web Mobile">
+            <img src="./img/diplomes/diplome_dwwm.webp" alt="Développeur Web et Web Mobile de Diego Riello" loading="lazy">
+          </button>
+          <div class="diploma-gallery__actions">
+            <button class="diploma-gallery__zoom" type="button">Agrandir le document</button>
+          </div>
+        </article>
+        <article class="diploma-gallery__card">
+          <time datetime="2024-10-04">4 octobre 2024</time>
+          <h3>Certification Réseaux sociaux</h3>
+          <p>Développer l’activité commerciale avec les réseaux sociaux.</p>
+          <button class="media-card diploma-gallery__preview" type="button" aria-label="Agrandir : Certification Réseaux sociaux">
+            <img src="./img/diplomes/certification_reseaux_sociaux.webp" alt="Certification Réseaux sociaux de Diego Riello" loading="lazy">
+          </button>
+          <div class="diploma-gallery__actions">
+            <button class="diploma-gallery__zoom" type="button">Agrandir le document</button>
+          </div>
+        </article>
+        <article class="diploma-gallery__card">
+          <time datetime="2024-09-12">12 septembre 2024</time>
+          <h3>Certification Tosa WordPress</h3>
+          <p>Certification Tosa WordPress.</p>
+          <button class="media-card diploma-gallery__preview" type="button" aria-label="Agrandir : Certification Tosa WordPress">
+            <img src="./img/diplomes/certification_wordpress.webp" alt="Certification Tosa WordPress de Diego Riello" loading="lazy">
+          </button>
+          <div class="diploma-gallery__actions">
+            <button class="diploma-gallery__zoom" type="button">Agrandir le document</button>
+          </div>
+        </article>
+        <article class="diploma-gallery__card">
+          <time datetime="2003-07-09">9 juillet 2003</time>
+          <h3>Baccalauréat professionnel Hôtellerie-Restauration</h3>
+          <p>Une formation à l’origine de mon expérience en cuisine, organisation et gestion d’activité.</p>
+          <button class="media-card diploma-gallery__preview" type="button" aria-label="Agrandir : Baccalauréat professionnel Hôtellerie-Restauration">
+            <img src="./img/diplomes/bacpro.webp" alt="Baccalauréat professionnel Hôtellerie-Restauration de Diego Riello" loading="lazy">
+          </button>
+          <div class="diploma-gallery__actions">
+            <button class="diploma-gallery__zoom" type="button">Agrandir le document</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </template>
+
+  <template id="panel-digital" data-title="Projets numériques" data-kicker="Développement web et communication" data-dialog-class="projects-dialog">
+    <div class="projects-grid">
+      <article class="project-card project-card--apero">
+        <img class="project-card__image" src="./img/projets/ega.webp" alt="Fromage et produits apéritifs autour d’un Escape Game l’Apéro">
+        <div class="project-card__body">
+          <h3>Escape Game l’Apéro</h3>          
+          <p class="project-card__status">Projet réalisé</p>
+          <p class="project-card__description">Conception du site WordPress et pilotage de la communication numérique d’un concept d’escape game mobile.</p>
+          <a class="project-card__link" href="https://www.escapegame-apero-beziers.fr" target="_blank" rel="noopener noreferrer">Voir le projet <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+      <article class="project-card project-card--garlic">
+        <img class="project-card__image" src="./img/projets/ail-noir.webp" alt="Pot d’ail noir français et gousses d’ail noir">
+        <div class="project-card__body">
+          <h3>French Black Garlic</h3>
+          <p class="project-card__status">Projet réalisé</p>
+          <p class="project-card__description">Site vitrine d’une marque d’ail noir français : produit, recettes et formulaire de contact. Réalisé et présenté devant un jury dans le cadre de mon titre professionnel DWWM.</p>
+          <p class="project-card__tech">HTML · CSS · JavaScript · Bootstrap</p>
+          <a class="project-card__link" href="https://ailnoirfrancais.com/" target="_blank" rel="noopener noreferrer">Voir le site <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+      <article class="project-card project-card--water">
+        <img class="project-card__image" src="./img/projets/waterphoto.webp" alt="Photographie abstraite de l’eau aux reflets bleus et cyan">
+        <div class="project-card__body">
+          <h3>WaterPhoto — Laurent Costa</h3>
+          <p class="project-card__status">Projet en cours</p>
+          <p class="project-card__description">Refonte du site du photographe Laurent Costa : valorisation de ses photographies de l’eau, organisation des contenus et accompagnement de sa communication numérique.</p>
+          <a class="project-card__link" href="https://waterphoto.eu/" target="_blank" rel="noopener noreferrer">Voir le site actuel <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+    </div>
+  </template>
+
+  <template id="panel-contact" data-title="Compétences" data-kicker="Trois domaines, un fil conducteur" data-dialog-class="skills-dialog">
+    <section class="skills-banner" aria-labelledby="skills-banner-title">
+      <h3 id="skills-banner-title">Chef d’entreprise &amp; entrepreneur</h3>
+      <p class="skills-banner__intro">J’ai développé une activité indépendante de traiteur et de chef à domicile, dirigé le restaurant Les Comédiens pendant sept ans et gère aujourd’hui Escape Game l’Apéro Béziers en tant que distributeur.</p>
+      <p class="skills-banner__summary">Concevoir une offre · Gérer une activité · Développer une clientèle</p>
+    </section>
+    <div class="skills-domains" role="group" aria-label="Domaines de compétences">
+      <article class="skill-domain skill-domain--cuisine">
+        <svg class="skill-domain__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <path d="M14 27a8 8 0 0 1-2-16 12 12 0 0 1 24 0 8 8 0 0 1-2 16v12H14Z"/><path d="M14 33h20M20 22v5m8-5v5"/>
+        </svg>
+        <h3 class="skill-domain__title">Restauration &amp; traiteur</h3>
+        <span class="skill-domain__intro">La cuisine est mon métier d’origine et une passion. De la restauration aux prestations privées, je prends en charge la préparation, l’organisation et la réalisation du service.</span>
+        <span class="skill-domain__skills">
+          <strong>Savoir-faire</strong>
+          <span class="skill-domain__item">Concevoir des menus et des prestations sur mesure.</span>
+          <span class="skill-domain__item">Organiser la production et le déroulement du service.</span>
+          <span class="skill-domain__item">Réaliser des prestations traiteur et de chef à domicile.</span>
+        </span>
+      </article>
+      <article class="skill-domain skill-domain--management">
+        <svg class="skill-domain__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <circle cx="24" cy="13" r="5"/><circle cx="10" cy="22" r="4"/><circle cx="38" cy="22" r="4"/><path d="M15 39v-6a9 9 0 0 1 18 0v6M3 39v-5a7 7 0 0 1 10-6m32 11v-5a7 7 0 0 0-10-6"/>
+        </svg>
+        <h3 class="skill-domain__title">Management opérationnel</h3>
+        <span class="skill-domain__intro">La gestion de mon restaurant, puis mon expérience chez Lidl, m’ont amené à organiser l’activité, accompagner les équipes et suivre les opérations au quotidien.</span>
+        <span class="skill-domain__skills">
+          <strong>Savoir-faire</strong>
+          <span class="skill-domain__item">Planifier l’activité et répartir le travail.</span>
+          <span class="skill-domain__item">Coordonner et former les collaborateurs.</span>
+          <span class="skill-domain__item">Suivre les achats, les stocks et les indicateurs d’activité.</span>
+        </span>
+      </article>
+      <article class="skill-domain skill-domain--digital">
+        <svg class="skill-domain__icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <rect x="5" y="8" width="38" height="28" rx="3"/><path d="m18 17-5 5 5 5m12-10 5 5-5 5m-4-12-4 16M17 42h14m-7-6v6"/>
+        </svg>
+        <h3 class="skill-domain__title">Développement web &amp; numérique</h3>
+        <span class="skill-domain__intro">Titulaire du titre professionnel DWWM obtenu en juin 2026, je complète mon expérience de terrain par le développement web et mes formations WordPress et réseaux sociaux.</span>
+        <span class="skill-domain__skills">
+          <strong>Savoir-faire</strong>
+          <span class="skill-domain__item">Développer des sites et interfaces en HTML, CSS et JavaScript.</span>
+          <span class="skill-domain__item">Créer et administrer des sites WordPress.</span>
+          <span class="skill-domain__item">Structurer les contenus et la communication numérique.</span>
+        </span>
+      </article>
+    </div>
+  </template>
+
+  <noscript>Ce CV virtuel nécessite JavaScript pour ouvrir les éléments interactifs du bureau.</noscript>
+  <script src="script.js" defer></script>
 </body>
 
 </html>
