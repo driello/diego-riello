@@ -15,7 +15,6 @@ const leisurePhotos = {
     { src: "./img/Loisirs/cuisine/14.webp", alt: "Pâtisserie garnie de crème et de poudre de cacao." },
     { src: "./img/Loisirs/cuisine/16.webp", alt: "Assiette de pâtes et légumes verts." },
     { src: "./img/Loisirs/cuisine/Poisson en croûte de gros sel.webp", alt: "Poisson entier recouvert d’une croûte de gros sel." },
-    
   ],
   voyages: [
     { src: "./img/Loisirs/voyages/90c3d430-22f3-430c-8da6-2329faf5ee0c.webp", alt: "Voyageur dans le hall de l’aéroport d’Ibiza." },
