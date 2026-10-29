@@ -6,6 +6,7 @@ const leisurePhotos = {
     { src: "./img/Loisirs/dj/519A7CFC-EEE8-4BA3-97AC-DB35F6DCCE56_1_105_c.webp", alt: "Platines et table de mixage éclairées en violet." },
   ],
   cuisine: [
+    { src: "./img/Loisirs/cuisine/thierry_marx_foodlab.webp", alt: "Deux personnes posant ensemble dans une cuisine." },
     { src: "./img/Loisirs/cuisine/06.webp", alt: "Préparation dressée dans une assiette creuse." },
     { src: "./img/Loisirs/cuisine/08.webp", alt: "Part de pâtisserie dorée sur une planche en bois." },
     { src: "./img/Loisirs/cuisine/09.webp", alt: "Gâteau au glaçage rose en spirale." },
@@ -14,7 +15,7 @@ const leisurePhotos = {
     { src: "./img/Loisirs/cuisine/14.webp", alt: "Pâtisserie garnie de crème et de poudre de cacao." },
     { src: "./img/Loisirs/cuisine/16.webp", alt: "Assiette de pâtes et légumes verts." },
     { src: "./img/Loisirs/cuisine/Poisson en croûte de gros sel.webp", alt: "Poisson entier recouvert d’une croûte de gros sel." },
-    { src: "./img/Loisirs/cuisine/thierry_marx_foodlab.webp", alt: "Deux personnes posant ensemble dans une cuisine." },
+    
   ],
   voyages: [
     { src: "./img/Loisirs/voyages/90c3d430-22f3-430c-8da6-2329faf5ee0c.webp", alt: "Voyageur dans le hall de l’aéroport d’Ibiza." },
