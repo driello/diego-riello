@@ -1,0 +1,49 @@
+name: Publier le bureau Talentys
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: bureau-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer les fichiers sans les sous-modules
+        uses: actions/checkout@v6
+        with:
+          submodules: false
+          persist-credentials: false
+      - name: Préparer uniquement le bureau
+        run: |
+          mkdir -p _site
+          cp index.html style.css script.js _site/
+          cp -R img _site/img
+          touch _site/.nojekyll
+      - name: Préparer GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Charger le bureau
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publier sur GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
